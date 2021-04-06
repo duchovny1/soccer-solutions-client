@@ -1,0 +1,20 @@
+.contryflag {
+    width: 30x;
+    height: 30px;
+}
+
+
+.infoRow {
+    margin-left: 30%;
+    width: 500px;
+    background: #4F4F4F;
+    display: flex;
+    flex-direction: row;
+}
+
+.infoLeagueHeader {
+    font-size: 12px;
+    font-weight: 700;
+    width: 80%;
+}
+
