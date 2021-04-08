@@ -1,0 +1,8 @@
+.headerrow {
+    display: flex;
+    flex-direction: row;
+}
+
+.teaminforow {
+    width: 40%;
+}

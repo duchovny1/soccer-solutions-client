@@ -5,25 +5,16 @@ import styles from './LeaguesGamesInfoHeader.module.css';
 class LeagueGamesInfoHeader extends Component {
      constructor(props){
         super(props);
-        
-        this.handleShowGameClick = this.handleShowGameClick.bind(this);
 
         this.state = {
            games: [],
            areGamesShowed: false
         }
      }
-    
-     handleShowGameClick()  {
-        this.setState(prevState => ({
-               areGamesShowed: !prevState.areGamesShowed
-          }))
-        console.log(this.state.areGamesShowed);
-     }
 
      render() {
        return <div>
-          <div className={styles.infoRow} onClick={this.handleShowGameClick}>
+          <div className={styles.infoRow}>
           <div>
           <FontAwesomeIcon icon={faFlagUsa} className={styles.iconcolor}/>
           </div>

@@ -1,11 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-import LeagueGamesInfoHeader from './components/LeaguesInformation/LeaguesGamesInfoHeader'
+import GamesForCurrentLeaguePerDayContainer from './components/MainPage/GamesForCurrentLeaguePerDay/GamesForCurrentLeaguePerDayContainer'
 
 function App() {
   return (
     <div className="App">
-      <LeagueGamesInfoHeader/>
+      <GamesForCurrentLeaguePerDayContainer/>
     </div>
   );
 }
