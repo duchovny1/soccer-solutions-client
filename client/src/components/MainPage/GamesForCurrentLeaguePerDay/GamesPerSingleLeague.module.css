@@ -1,0 +1,11 @@
+.tablewidth {
+  width: 50%;
+}
+
+.borderleftnone {
+  border-left: none !important;
+}
+
+.borderrightnone {
+  border-right: none !important;
+}

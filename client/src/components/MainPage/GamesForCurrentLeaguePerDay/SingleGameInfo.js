@@ -1,16 +1,15 @@
-import React from 'react'
-import styles from './SingleGameInfo.module.css'
+import React from "react";
+import styles from "./SingleGameInfo.module.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const SingleGameInfo = (props) => {
-    
-      return (
-          <div className={styles.headerrow}>
-            <div className={styles.teaminforow}>Granada</div>
-            <div>22 : 00</div>
-            <div className={styles.teaminforow}>Atletico Madrid</div>
-          </div>
-      )
-
-}
+  return (
+    <tr>
+      <td style={{ width: "40%" }}>{props.homeTeamName}</td>
+      <td style={{ width: "20%" }}>{props.kickOff}</td>
+      <td style={{ width: "40%" }}>{props.awayTeamName}</td>
+    </tr>
+  );
+};
 
 export default SingleGameInfo;
