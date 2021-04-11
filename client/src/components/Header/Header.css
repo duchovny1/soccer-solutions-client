@@ -1,0 +1,21 @@
+img {
+  object-fit: cover;
+  color: white;
+  position: relative;
+  top: 10px;
+}
+
+.nav-link-color {
+  font-family: "Helvetica";
+  font-style: italic;
+  font-size: 18px;
+}
+
+.nav-link-color:hover {
+  border-top: 2px solid #ff6700;
+  border-top-left-radius: 20px;
+}
+
+.border-style {
+  border-bottom: 2px solid #ff6700;
+}
