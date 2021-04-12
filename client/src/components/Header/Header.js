@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import Logo from "../../soccerway1.png";
 import "./Header.css";
+import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <>
@@ -14,17 +15,37 @@ const Header = () => {
           height="50"
           className="d-inline-block align-top"
         />{" "}
-        <Nav activeKey="" className="mr-auto">
-          <Nav.Link href="/fixtures" className="nav-link-color">
+        <Nav className="mr-auto" defaultActiveKey="1">
+          <Nav.Link
+            as={Link}
+            to="/fixtures"
+            className="nav-link-color"
+            eventKey="1"
+          >
             FIXTURES
           </Nav.Link>
-          <Nav.Link href="/competitions" className="nav-link-color">
+          <Nav.Link
+            as={Link}
+            to="/competitions"
+            eventKey="2"
+            className="nav-link-color"
+          >
             COMPETITIONS
           </Nav.Link>
-          <Nav.Link href="/teams" className="nav-link-color">
+          <Nav.Link
+            as={Link}
+            to="/teams"
+            eventKey="3"
+            className="nav-link-color"
+          >
             TEAMS
           </Nav.Link>
-          <Nav.Link href="/predictions" className="nav-link-color">
+          <Nav.Link
+            as={Link}
+            to="/predictions"
+            eventKey="4"
+            className="nav-link-color"
+          >
             PREDICTIONS
           </Nav.Link>
         </Nav>

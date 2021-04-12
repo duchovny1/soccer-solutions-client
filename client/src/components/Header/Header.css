@@ -11,7 +11,8 @@ img {
   font-size: 18px;
 }
 
-.nav-link-color:hover {
+.nav-link-color:hover,
+.active {
   border-top: 2px solid #ff6700;
   border-top-left-radius: 20px;
 }
