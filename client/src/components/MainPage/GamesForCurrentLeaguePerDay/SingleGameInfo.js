@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const SingleGameInfo = (props) => {
   return (
-    <tr as={Link} to={`/head2head/232/888`}>
+    <tr>
       <td style={{ width: "40%" }}>{props.homeTeamName}</td>
       <td style={{ width: "20%" }}>
         <Link to={`/head2head/111/333`}>{props.kickOff}</Link>

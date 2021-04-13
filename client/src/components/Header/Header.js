@@ -3,7 +3,10 @@ import { Navbar, Nav } from "react-bootstrap";
 import Logo from "../../soccerway1.png";
 import "./Header.css";
 import { Link } from "react-router-dom";
-const Header = () => {
+
+const Header = ({ match }) => {
+  console.log(match);
+
   return (
     <>
       <Navbar bg="dark" variant="dark" className="border-style">
