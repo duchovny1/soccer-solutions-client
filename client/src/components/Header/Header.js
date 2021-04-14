@@ -1,12 +1,12 @@
-import { useState } from "react";
+import { useContext } from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import Logo from "../../soccerway1.png";
 import "./Header.css";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../contexts/AuthContext";
 
 const Header = ({ match }) => {
-  console.log(match);
-
+  const { isAuthenticated, username } = useContext(AuthContext);
   return (
     <>
       <Navbar bg="dark" variant="dark" className="border-style">
@@ -51,6 +51,40 @@ const Header = ({ match }) => {
           >
             PREDICTIONS
           </Nav.Link>
+          <section style={{ marginLeft: "1000px" }}>
+            {isAuthenticated ? (
+              <div>
+                Welcome, {username}
+                <Nav.Link
+                  as={Link}
+                  to="/logout"
+                  eventKey="5"
+                  className="nav-link-color"
+                >
+                  Logout
+                </Nav.Link>
+              </div>
+            ) : (
+              <div>
+                <Nav.Link
+                  as={Link}
+                  to="/login"
+                  eventKey="6"
+                  className="nav-link-color"
+                >
+                  Login
+                </Nav.Link>
+                <Nav.Link
+                  as={Link}
+                  to="/register"
+                  eventKey="7"
+                  className="nav-link-color"
+                >
+                  Register
+                </Nav.Link>
+              </div>
+            )}
+          </section>
         </Nav>
       </Navbar>
     </>
