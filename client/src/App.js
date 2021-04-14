@@ -13,6 +13,7 @@ import { auth } from "./utils/firebase";
 import { useState, useEffect } from "react";
 import { AuthContext } from "./contexts/AuthContext";
 import { isAuth } from "./hoc/isAuth";
+import "react-calendar/dist/Calendar.css";
 
 function App() {
   const [user, setUser] = useState(null);

@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import DatePicker from "../../DatePicker/DatePicker";
 import GamesPerSingleLeague from "./GamesPerSingleLeague";
 
 const GamesForCurrentLeaguePerDayContainer = () => {
+  const [gamesOnCurrentDate, getGamesForCurrentDate] = useState(new Date());
+
+  useEffect(() => {
+    console.log("its changed:");
+    console.log(gamesOnCurrentDate.toLocaleDateString());
+  }, [gamesOnCurrentDate]);
+
   const leagueGames = [
     {
       leagueName: "Premier League",
@@ -71,6 +79,10 @@ const GamesForCurrentLeaguePerDayContainer = () => {
           />
         );
       })}
+      <DatePicker
+        gamesOnCurrentDate={gamesOnCurrentDate}
+        getGamesForCurrentDate={getGamesForCurrentDate}
+      />
     </div>
   );
 };
