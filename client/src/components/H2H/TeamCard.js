@@ -11,6 +11,7 @@ const TeamCard = ({ teamId }) => {
     height: 300px;
     border: 1px solid #ff6700;
     object-fit: contain;
+    border-radius: 50%;
   `;
 
   const StyledContainer = styled(Container)`

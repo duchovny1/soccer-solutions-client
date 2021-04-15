@@ -3,13 +3,15 @@ import DatePicker from "../../DatePicker/DatePicker";
 import GamesPerSingleLeague from "./GamesPerSingleLeague";
 import styles from "styled-components";
 import { Container } from "react-bootstrap";
+import * as leaguesService from "../../../services/leaguesService";
 
 const GamesForCurrentLeaguePerDayContainer = () => {
   const [gamesOnCurrentDate, getGamesForCurrentDate] = useState(new Date());
 
   useEffect(() => {
-    console.log("its changed:");
-    console.log(gamesOnCurrentDate.toLocaleDateString());
+    leaguesService.getLeaguesByDate(
+      gamesOnCurrentDate.toLocaleDateString("en-US")
+    );
   }, [gamesOnCurrentDate]);
 
   const StyledDiv = styles.div`

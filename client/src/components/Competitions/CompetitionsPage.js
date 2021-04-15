@@ -1,7 +1,10 @@
+import { Container } from "react-bootstrap";
+import CompetitionsTable from "./CompetitionsTable";
+
 const CompetitionsPage = () => {
   return (
     <div>
-      <span>dsadas!!</span>
+      <CompetitionsTable />
     </div>
   );
 };

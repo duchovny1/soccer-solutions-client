@@ -1,8 +1,6 @@
 img {
   object-fit: cover;
   color: white;
-  position: relative;
-  top: 10px;
 }
 
 .nav-link-color {

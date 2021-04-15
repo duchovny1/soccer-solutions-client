@@ -1,5 +1,4 @@
 import Calendar from "react-calendar";
-import { useState, useEffect } from "react";
 
 const DatePicker = ({ gamesOnCurrentDate, getGamesForCurrentDate }) => {
   return (
