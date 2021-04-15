@@ -1,7 +1,7 @@
 const CompetitionsPage = () => {
   return (
     <div>
-      <span>HA!!</span>
+      <span>dsadas!!</span>
     </div>
   );
 };

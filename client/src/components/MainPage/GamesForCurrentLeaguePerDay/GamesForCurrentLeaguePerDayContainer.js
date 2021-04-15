@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import DatePicker from "../../DatePicker/DatePicker";
 import GamesPerSingleLeague from "./GamesPerSingleLeague";
+import styles from "styled-components";
+import { Container } from "react-bootstrap";
 
 const GamesForCurrentLeaguePerDayContainer = () => {
   const [gamesOnCurrentDate, getGamesForCurrentDate] = useState(new Date());
@@ -9,6 +11,11 @@ const GamesForCurrentLeaguePerDayContainer = () => {
     console.log("its changed:");
     console.log(gamesOnCurrentDate.toLocaleDateString());
   }, [gamesOnCurrentDate]);
+
+  const StyledDiv = styles.div`
+         display: flex;
+         flex-direction: row;
+  `;
 
   const leagueGames = [
     {
@@ -68,22 +75,24 @@ const GamesForCurrentLeaguePerDayContainer = () => {
   ];
 
   return (
-    <div>
-      {leagueGames.map((x) => {
-        console.log(x);
-        return (
-          <GamesPerSingleLeague
-            leagueName={x.leagueName}
-            games={x.games}
-            countryName={x.countryName}
-          />
-        );
-      })}
+    <StyledDiv>
+      <Container>
+        {leagueGames.map((x) => {
+          console.log(x);
+          return (
+            <GamesPerSingleLeague
+              leagueName={x.leagueName}
+              games={x.games}
+              countryName={x.countryName}
+            />
+          );
+        })}
+      </Container>
       <DatePicker
         gamesOnCurrentDate={gamesOnCurrentDate}
         getGamesForCurrentDate={getGamesForCurrentDate}
       />
-    </div>
+    </StyledDiv>
   );
 };
 

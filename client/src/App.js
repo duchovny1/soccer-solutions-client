@@ -14,6 +14,7 @@ import { useState, useEffect } from "react";
 import { AuthContext } from "./contexts/AuthContext";
 import { isAuth } from "./hoc/isAuth";
 import "react-calendar/dist/Calendar.css";
+import TeamCard from "./components/H2H/TeamCard";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -36,6 +37,7 @@ function App() {
             <Route path="/" exact>
               <Redirect to="/fixtures" />
             </Route>
+            <Route path="/test" exact Component={() => <TeamCard />} />
             <Route path="/competitions" exact component={CompetitionsPage} />
             <Route
               path="/fixtures"
