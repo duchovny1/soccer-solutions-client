@@ -1,21 +1,26 @@
 import { Container } from "react-bootstrap";
 import HeaderTable from "../../Common/HeaderTable";
+import * as flags from "../../../utils/flags";
+import ClubDomesticTableRow from "./ClubDomesticTableRow";
+import styled from "styled-components";
 
-const ClubDomesticTable = () => {
+const ClubDomesticTable = ({ countries }) => {
+  const StyledContainer = styled(Container)``;
+
   return (
     <Container>
       <HeaderTable title="Club Domestic" />
       <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
+        <ClubDomesticTableRow />
+        <ClubDomesticTableRow />
+        <ClubDomesticTableRow />
+        <ClubDomesticTableRow />
+        <ClubDomesticTableRow />
+        <ClubDomesticTableRow />
+        <ClubDomesticTableRow />
+        <ClubDomesticTableRow />
+        <ClubDomesticTableRow />
+        <ClubDomesticTableRow />
       </ul>
     </Container>
   );

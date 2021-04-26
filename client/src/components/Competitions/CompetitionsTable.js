@@ -1,8 +1,14 @@
 import { Container } from "react-bootstrap";
 import CompetitionsTableRow from "./CompetitionsTableRow";
 import HeaderTable from "../Common/HeaderTable";
+import styled from "styled-components";
 
-const CompetitionsPage = () => {
+const CompetitionsPage = ({ title, style }) => {
+  const StyledContainer = styled(Container)`
+    width: 250px;
+  `;
+
+  console.log(style);
   const competitions = [
     {
       code: "GB",
@@ -55,8 +61,8 @@ const CompetitionsPage = () => {
   ];
 
   return (
-    <Container style={{ width: "400px" }}>
-      <HeaderTable title="Popular" />
+    <StyledContainer style={style}>
+      <HeaderTable title={title} />
       <table className="table table-white table-striped table-bordered table-hover">
         <thead></thead>
         <tbody>
@@ -65,7 +71,7 @@ const CompetitionsPage = () => {
           })}
         </tbody>
       </table>
-    </Container>
+    </StyledContainer>
   );
 };
 
