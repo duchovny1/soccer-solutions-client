@@ -7,11 +7,12 @@ import * as leaguesService from "../../../services/leaguesService";
 
 const GamesForCurrentLeaguePerDayContainer = () => {
   const [gamesOnCurrentDate, getGamesForCurrentDate] = useState(new Date());
+  const [leaguesWithGames, setLeagueWithGames] = useState([]);
 
   useEffect(() => {
-    leaguesService.getLeaguesByDate(
-      gamesOnCurrentDate.toLocaleDateString("en-US")
-    );
+    leaguesService
+      .getLeaguesByDate(gamesOnCurrentDate.toLocaleDateString("en-US"))
+      .then((res) => setLeagueWithGames(res));
   }, [gamesOnCurrentDate]);
 
   const StyledDiv = styles.div`
@@ -19,77 +20,25 @@ const GamesForCurrentLeaguePerDayContainer = () => {
          flex-direction: row;
   `;
 
-  const leagueGames = [
-    {
-      leagueName: "Premier League",
-      countryName: "England",
-      games: [
-        {
-          homeTeamName: "Liverpool",
-          awayTeamName: "Manchester City",
-          kickOff: "22:00",
-          status: "NotStarted",
-          result: "0:0",
-        },
-        {
-          homeTeamName: "West Ham",
-          awayTeamName: "Arsenal",
-          kickOff: "22:00",
-          status: "NotStarted",
-          result: "0:0",
-        },
-        {
-          homeTeamName: "Chelsea",
-          awayTeamName: "Brighton Albion",
-          kickOff: "22:00",
-          status: "NotStarted",
-          result: "0:0",
-        },
-      ],
-    },
-    {
-      leagueName: "Championship",
-      countryName: "England",
-      games: [
-        {
-          homeTeamName: "Reading",
-          awayTeamName: "Hull City",
-          kickOff: "22:00",
-          status: "NotStarted",
-          result: "0:0",
-        },
-        {
-          homeTeamName: "Cardiff",
-          awayTeamName: "Middlesbro",
-          kickOff: "22:00",
-          status: "NotStarted",
-          result: "0:0",
-        },
-        {
-          homeTeamName: "Portsmouth",
-          awayTeamName: "Burnley",
-          kickOff: "22:00",
-          status: "NotStarted",
-          result: "0:0",
-        },
-      ],
-    },
-  ];
+  const StyledContainer = styles(Container)`
+    display: flex;
+    flex-direction: column;
+  `;
 
   return (
     <StyledDiv>
-      <Container>
-        {leagueGames.map((x) => {
-          console.log(x);
+      <StyledContainer>
+        {leaguesWithGames.map((x, i) => {
           return (
             <GamesPerSingleLeague
+              index={i}
               leagueName={x.leagueName}
               games={x.games}
               countryName={x.countryName}
             />
           );
         })}
-      </Container>
+      </StyledContainer>
       <DatePicker
         gamesOnCurrentDate={gamesOnCurrentDate}
         getGamesForCurrentDate={getGamesForCurrentDate}

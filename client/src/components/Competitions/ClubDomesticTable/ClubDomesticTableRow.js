@@ -5,18 +5,28 @@ import styled from "styled-components";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const ClubDomesticTableRow = () => {
+const ClubDomesticTableRow = ({ code, countryName }) => {
   const [shouldShowLeagues, setShouldShowLeagues] = useState(false);
 
   const StyledLi = styled.li`
+    display: flex;
+    align-items: center;
+    justify-content: center;
     list-style-type: none;
-    height: 40px;
+    padding: 20px;
+    height: 50px;
+
+    &:hover {
+      color: white;
+      background: #343a40;
+    }
   `;
 
   return (
     <StyledLi>
-      {flags.flags["GB"]} England{" "}
+      {flags.flags[code]} {countryName}{" "}
       <FontAwesomeIcon
+        className="ml-2"
         icon={faPlusSquare}
         onClick={() => setShouldShowLeagues(!shouldShowLeagues)}
       />

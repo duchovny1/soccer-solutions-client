@@ -7,6 +7,9 @@ const CreatePredictionButton = () => {
     color: #fff;
     background-color: #23272b;
     border-color: #1d2124;
+    position: relative;
+    top: -766px;
+    left: 800px;
 
     &:hover {
       cursor: pointer;

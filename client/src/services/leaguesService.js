@@ -3,9 +3,9 @@ const baseUrl = "https://localhost:44358";
 export const getLeaguesByDate = (date) => {
   const leaguesByDateUrl = baseUrl + "/leagues/by-date" + `?date=${date}`;
 
-  fetch(leaguesByDateUrl).then((res) => res.json());
-
-  console.log(`leagues by date: ${leaguesByDateUrl}`);
+  return fetch(leaguesByDateUrl)
+    .then((res) => res.json())
+    .catch((err) => console.log(err));
 };
 
 export const getLeaguesByCountryId = (id) => {
@@ -15,5 +15,7 @@ export const getLeaguesByCountryId = (id) => {
   id = 1;
   const countryIdUrl = baseUrl + "/leagues/by-countryId" + `?countryId=${id}`;
 
-  return fetch(countryIdUrl).then((res) => res.json());
+  return fetch(countryIdUrl)
+    .then((res) => res.json())
+    .catch((err) => console.log(err));
 };

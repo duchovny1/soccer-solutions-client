@@ -2,10 +2,19 @@
   width: 50%;
 }
 
+.tablepos {
+  display: flex;
+  align-self: center;
+}
+
 .borderleftnone {
   border-left: none !important;
 }
 
 .borderrightnone {
   border-right: none !important;
+}
+
+.borderbtm {
+  border-bottom: 2px solid #ff6700 !important;
 }

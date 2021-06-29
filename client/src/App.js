@@ -21,6 +21,8 @@ function App() {
 
   useEffect(() => {
     auth.onAuthStateChanged(setUser);
+    console.log(user);
+    debugger;
   }, []);
 
   const authInfo = {

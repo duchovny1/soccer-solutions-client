@@ -7,6 +7,7 @@ import { AuthContext } from "../../contexts/AuthContext";
 
 const Header = ({ match }) => {
   const { isAuthenticated, username } = useContext(AuthContext);
+
   return (
     <>
       <Navbar bg="dark" variant="dark" className="border-style">
@@ -51,9 +52,15 @@ const Header = ({ match }) => {
           >
             PREDICTIONS
           </Nav.Link>
-          <section style={{ marginLeft: "900px" }}>
+          <section style={{ marginLeft: "880px" }}>
             {isAuthenticated ? (
-              <div>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  color: "white",
+                }}
+              >
                 Welcome, {username}
                 <Nav.Link
                   as={Link}

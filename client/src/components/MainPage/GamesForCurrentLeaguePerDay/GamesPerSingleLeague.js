@@ -10,11 +10,21 @@ class GamesPerSingleLeague extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      areGamesShowed: false,
-      hoverStyles: {},
+      areGamesShowed: props.index <= 2,
+      hoverStyles:
+        props.index <= 2
+          ? {
+              backgroundColor: "white",
+              color: "#454d55",
+            }
+          : {},
     };
     this.handleShowGameClick = this.handleShowGameClick.bind(this);
     this.setHoverStyles = this.setHoverStyles.bind(this);
+
+    if (this.state.areGamesShowed) {
+      this.setHoverStyles();
+    }
   }
 
   handleShowGameClick() {
@@ -38,8 +48,14 @@ class GamesPerSingleLeague extends Component {
 
   render() {
     return (
-      <div className={styles.tablewidth}>
-        <Table striped bordered hover variant="dark">
+      <div className={`${styles.tablewidth} ${styles.tablepos}`}>
+        <Table
+          striped
+          bordered
+          hover
+          variant="dark"
+          className={`mb-0 ${styles.borderbtm}`}
+        >
           <thead>
             <tr></tr>
           </thead>

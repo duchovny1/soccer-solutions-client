@@ -3,24 +3,32 @@ import HeaderTable from "../../Common/HeaderTable";
 import * as flags from "../../../utils/flags";
 import ClubDomesticTableRow from "./ClubDomesticTableRow";
 import styled from "styled-components";
+import { useEffect, useState } from "react";
+import * as countriesService from "../../../services/countriesService";
 
-const ClubDomesticTable = ({ countries }) => {
-  const StyledContainer = styled(Container)``;
+const ClubDomesticTable = () => {
+  const [countries, setCountries] = useState([]);
+
+  useEffect(() => {
+    countriesService.getAll().then((res) => setCountries(res));
+  }, []);
 
   return (
     <Container>
       <HeaderTable title="Club Domestic" />
       <ul>
-        <ClubDomesticTableRow />
-        <ClubDomesticTableRow />
-        <ClubDomesticTableRow />
-        <ClubDomesticTableRow />
-        <ClubDomesticTableRow />
-        <ClubDomesticTableRow />
-        <ClubDomesticTableRow />
-        <ClubDomesticTableRow />
-        <ClubDomesticTableRow />
-        <ClubDomesticTableRow />
+        {countries &&
+          countries.map((x) => {
+            return (
+              <div>
+                <ClubDomesticTableRow
+                  key={x.id}
+                  code={x.code}
+                  countryName={x.countryName}
+                />
+              </div>
+            );
+          })}
       </ul>
     </Container>
   );

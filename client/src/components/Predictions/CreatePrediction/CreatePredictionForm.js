@@ -1,27 +1,54 @@
-import { Component } from "react";
-import { DropdownButton, Dropdown } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 import DropdownMenu from "react-bootstrap/esm/DropdownMenu";
 import * as countriesService from "../../../services/countriesService";
 import CascadeDropDownMenu from "./CascadeDropDownMenu";
+import { useState, useRef, useContext } from "react";
+import Card from "../../Common/Card/Card";
+import styled from "styled-components";
+import { AuthContext } from "../../../contexts/AuthContext";
+import * as ps from "../../../services/predictionsService";
 
-class CreatePredictionForm extends Component {
-  constructor(props) {
-    super(props);
+const CreatePredictionForm = () => {
+  const [state, setState] = useState({
+    description: "",
+    prediction: "",
+    isSubmitted: false,
+  });
 
-    this.isFormValid.bind(this);
-    this.state = {
-      nameOfTheGame: "",
-      description: "",
-      prediction: "",
-      isSubmitted: false,
-    };
-  }
+  const [selectedCountry, selectCountry] = useState({});
+  const [selectedLeague, selectLeague] = useState({});
+  const [selectedHomeTeam, selectHomeTeam] = useState({});
+  const [selectedAwayTeam, selectAwayTeam] = useState({});
+  const [descriptionError, setDescriptionErrorMessage] = useState("");
+  const [predictionError, setPredictionErrorMessage] = useState("");
+  const [isDescriptionErr, setDescriptionError] = useState(false);
+  const [isPredictionErr, setPredictionError] = useState(false);
 
-  componentDidMount() {
-    console.log(this.state.countries);
-  }
+  const [shouldShowFormFields, setShouldShowFormFields] = useState(false);
 
-  isFormValid() {
+  const { userName } = useContext(AuthContext);
+
+  const StyledInvalidInput = styled.span`
+    color: #ff8080;
+    font-size: 18;
+    font-style: italic;
+  `;
+
+  const isFormValid = (description, prediction) => {
+    if (description.length < 10) {
+      const descriptionEl = document.getElementById("description");
+      descriptionEl.classList.add("input-invalid");
+      setDescriptionErrorMessage("The description is too small!");
+      setDescriptionError(true);
+    }
+
+    if (prediction.length > 10) {
+      const predictionEl = document.getElementById("prediction");
+      predictionEl.classList.add("input-invalid");
+      setPredictionErrorMessage("The prediction is invalid!");
+      setPredictionError(true);
+    }
+
     const el = document.getElementsByClassName("input-invalid")[0];
 
     if (el) {
@@ -29,64 +56,93 @@ class CreatePredictionForm extends Component {
       return false;
     }
 
+    var elems = document.querySelectorAll(".input-invalid");
+
+    [].forEach.call(elems, function (el) {
+      el.classList.remove(".input-invalid");
+    });
+
+    setDescriptionError(false);
+    setPredictionError(false);
+    setDescriptionError("");
+    setPredictionError("");
+
     return true;
-  }
+  };
 
-  onChangeHandler(e) {
-    this.setState({ [e.target.name]: e.target.value });
-  }
+  const onChangeHandler = (e) => {
+    setState({ [e.target.name]: e.target.value });
+  };
 
-  submitForm(e) {
+  const showInputFieldsHandler = (teamOneId, teamTwoId) => {
+    if (teamOneId && teamTwoId) {
+      setShouldShowFormFields(true);
+    }
+  };
+
+  const submitForm = (e) => {
     e.preventDefault();
 
-    this.setState({ isSubmitted: true });
+    setState({ isSubmitted: true });
 
-    if (this.isFormValid()) {
-      console.log("xoxo");
+    const description = e.target.description.value;
+    const prediction = e.target.prediction.value;
+
+    if (isFormValid(description, prediction)) {
+      const data = {
+        country: selectedCountry,
+        league: selectedLeague,
+        homeTeam: selectedHomeTeam,
+        awayTeam: selectedAwayTeam,
+        prediction: prediction,
+        description: description,
+        user: userName,
+      };
+
+      ps.createPrediction(data);
     }
-  }
-  render() {
-    return (
-      <div>
-        <CascadeDropDownMenu />
-        <form onSubmit={this.submitForm.bind(this)}>
-          <div>
-            <label htmlFor="nameOfTheGame">Name of the game:</label>
-            <input
-              type="text"
-              id="nameOfTheGame"
-              name="nameOfTheGame"
-              value={this.state.nameOfTheGame}
-              onChange={this.onChangeHandler.bind(this)}
-              className={
-                this.state.nameOfTheGame.length < 5 ? "input-invalid" : ""
-              }
-            />
-            {this.state.isSubmitted && this.state.nameOfTheGame.length < 5 && (
-              <span>The data is invalid!</span>
-            )}
-            <label htmlFor="description">Description:</label>
-            <input
-              type="description"
-              id="description"
-              name="description"
-              value={this.state.description}
-              onChange={this.onChangeHandler.bind(this)}
-            />
-            <label htmlFor="prediction">Prediction:</label>
-            <input
-              type="text"
-              id="prediction"
-              name="prediction"
-              value={this.state.prediction}
-              onChange={this.onChangeHandler.bind(this)}
-            />
-            <button type="submit">Create!</button>
-          </div>
-        </form>
-      </div>
-    );
-  }
-}
+  };
+
+  return (
+    <Card>
+      <CascadeDropDownMenu
+        showInputFieldsHandler={showInputFieldsHandler}
+        selectedCountry={selectedCountry}
+        selectCountry={selectCountry}
+        selectedLeague={selectedLeague}
+        selectLeague={selectLeague}
+        selectedHomeTeam={selectedHomeTeam}
+        selectHomeTeam={selectHomeTeam}
+        selectedAwayTeam={selectedAwayTeam}
+        selectAwayTeam={selectAwayTeam}
+      />
+      {shouldShowFormFields && (
+        <Form onSubmit={submitForm}>
+          <Form.Group>
+            <Form.Label htmlFor="description">Description:</Form.Label>
+            <Form.Control type="textarea" id="description" name="description" />
+          </Form.Group>
+          {isDescriptionErr ? (
+            <StyledInvalidInput>{descriptionError}</StyledInvalidInput>
+          ) : (
+            <span style={{ display: "none" }}></span>
+          )}
+          <Form.Group>
+            <Form.Label htmlFor="prediction">Prediction:</Form.Label>
+            <Form.Control type="text" id="prediction" name="prediction" />
+          </Form.Group>
+          {isPredictionErr ? (
+            <StyledInvalidInput>{predictionError}</StyledInvalidInput>
+          ) : (
+            <span style={{ display: "none" }}></span>
+          )}
+          <Button variant="dark" type="submit">
+            Create!
+          </Button>
+        </Form>
+      )}
+    </Card>
+  );
+};
 
 export default CreatePredictionForm;

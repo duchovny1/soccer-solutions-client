@@ -1,21 +1,28 @@
 import { useEffect, useState } from "react";
-import { Dropdown, DropdownButton, Row } from "react-bootstrap";
+import { Container, Dropdown, DropdownButton, Row } from "react-bootstrap";
 import * as countriesService from "../../../services/countriesService";
 import * as leaguesService from "../../../services/leaguesService";
 import premierLeagueTeams from "../../../utils/teams";
 
-const CascadeDropDownMenu = () => {
+const CascadeDropDownMenu = ({
+  showInputFieldsHandler,
+  selectedCountry,
+  selectCountry,
+  selectedLeague,
+  selectLeague,
+  selectedHomeTeam,
+  selectHomeTeam,
+  selectedAwayTeam,
+  selectAwayTeam,
+}) => {
   const [countries, setCountries] = useState([]);
   const [leagues, setLeagues] = useState([]);
   const [teams, setTeams] = useState([]);
-  const [selectedCountry, selectCountry] = useState({});
-  const [selectedLeague, selectLeague] = useState({});
-  const [selectedHomeTeam, selectHomeTeam] = useState({});
-  const [selectedAwayTeam, selectAwayTeam] = useState({});
 
   useEffect(() => {
-    countriesService.getAll().then((response) => setCountries(response));
-    debugger;
+    countriesService.getAll().then((response) => {
+      setCountries((prevState) => response);
+    });
   }, []);
 
   useEffect(() => {
@@ -24,15 +31,17 @@ const CascadeDropDownMenu = () => {
         .getLeaguesByCountryId(selectCountry.id)
         .then((res) => setLeagues(res));
     }
-    console.log("dasdsa");
   }, [selectedCountry.Id]);
 
+  useEffect(() => {}, [selectedLeague]);
+
   useEffect(() => {
-    console.log(selectedLeague);
-  }, [selectedLeague]);
+    showInputFieldsHandler(selectedHomeTeam.id, selectedAwayTeam.id);
+    debugger;
+  }, [selectedHomeTeam, selectedAwayTeam]);
 
   const selectCountryHandler = (countryId) => {
-    selectCountry(countries.find((x) => x.id === +countryId));
+    selectCountry({ ...countries.find((x) => x.id === +countryId) });
   };
 
   const selectLeagueHandler = (leagueId) => {
@@ -52,7 +61,7 @@ const CascadeDropDownMenu = () => {
   };
 
   return (
-    <div>
+    <Container className="mt-3" style={{ width: "500px" }}>
       {countries && (
         <DropdownButton
           variant="secondary"
@@ -69,6 +78,7 @@ const CascadeDropDownMenu = () => {
 
       {!isEmpty(selectedCountry) && (
         <DropdownButton
+          className="mt-3"
           variant="secondary"
           title={selectedLeague.leagueName || "--- Select League ---"}
           onSelect={(e) => selectLeagueHandler(e)}
@@ -85,8 +95,9 @@ const CascadeDropDownMenu = () => {
         </DropdownButton>
       )}
       {!isEmpty(selectedCountry) && !isEmpty(selectedLeague) && (
-        <Row>
+        <Row className="m-3" style={{ justifyContent: "center" }}>
           <DropdownButton
+            className="mr-1"
             variant="secondary"
             title={selectedHomeTeam.name || "--- Select Home Team ---"}
             onSelect={(e) => selectHomeTeamHandler(e)}
@@ -101,6 +112,7 @@ const CascadeDropDownMenu = () => {
           </DropdownButton>
 
           <DropdownButton
+            className="ml-1"
             variant="secondary"
             title={selectedAwayTeam.name || "--- Select Away Team ---"}
             onSelect={(e) => selectAwayTeamHandler(e)}
@@ -115,7 +127,7 @@ const CascadeDropDownMenu = () => {
           </DropdownButton>
         </Row>
       )}
-    </div>
+    </Container>
   );
 };
 

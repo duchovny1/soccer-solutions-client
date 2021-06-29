@@ -14,9 +14,12 @@ const TeamCardStatistics = ({ teamId }) => {
 }`;
 
   return (
-    <div class="d-block" style={{ backgroundColor: "#ede9e9", width: "50%" }}>
-      <div class="row">
-        <div class="col">
+    <div
+      className="d-block"
+      style={{ backgroundColor: "#ede9e9", width: "50%" }}
+    >
+      <div className="row">
+        <div className="col">
           <StyledTable>
             <thead></thead>
             <tbody>
