@@ -1,0 +1,72 @@
+﻿[
+  {
+
+    "Id": 1,
+    "LeagueName": "Premier League",
+    "CountryName": "England",
+    "Code": "GB"
+  },
+  {
+
+    "Id": 2,
+    "LeagueName": "Championship",
+    "CountryName": "England",
+    "Code": "GB"
+  },
+  {
+
+    "Id": 3,
+    "LeagueName": "League One",
+    "CountryName": "England",
+    "Code": "GB"
+  },
+  {
+
+    "Id": 4,
+    "LeagueName": "League Two",
+    "CountryName": "England",
+    "Code": "GB"
+  },
+  {
+
+    "Id": 5,
+    "LeagueName": "La Liga",
+    "CountryName": "Spain",
+    "Code": "ES"
+  },
+  {
+
+    "Id": 6,
+    "LeagueName": "Seria A",
+    "CountryName": "Italy",
+    "Code": "IT"
+  },
+  {
+
+    "Id": 7,
+    "LeagueName": "Ligue 1",
+    "CountryName": "France",
+    "Code": "FR"
+  },
+  {
+
+    "Id": 8,
+    "LeagueName": "Belgium",
+    "CountryName": "First Devision A",
+    "Code": "BE"
+  },
+  {
+
+    "Id": 8,
+    "LeagueName": "Belgium",
+    "CountryName": "First Devision B",
+    "Code": "BE"
+  },
+  {
+
+    "Id": 8,
+    "LeagueName": "France",
+    "CountryName": "Ligue 2",
+    "Code": "FR"
+  }
+]

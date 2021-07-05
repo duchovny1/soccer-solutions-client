@@ -17,13 +17,18 @@ const CascadeDropDownMenu = ({
 }) => {
   const [countries, setCountries] = useState([]);
   const [leagues, setLeagues] = useState([]);
-  const [teams, setTeams] = useState([]);
 
   useEffect(() => {
     countriesService.getAll().then((response) => {
-      setCountries((prevState) => response);
+      debugger;
+      setCountries(response);
     });
   }, []);
+
+  useEffect(() => {
+    console.log(countries);
+    debugger;
+  }, [countries]);
 
   useEffect(() => {
     if (selectCountry) {
@@ -37,7 +42,6 @@ const CascadeDropDownMenu = ({
 
   useEffect(() => {
     showInputFieldsHandler(selectedHomeTeam.id, selectedAwayTeam.id);
-    debugger;
   }, [selectedHomeTeam, selectedAwayTeam]);
 
   const selectCountryHandler = (countryId) => {
@@ -45,15 +49,15 @@ const CascadeDropDownMenu = ({
   };
 
   const selectLeagueHandler = (leagueId) => {
-    selectLeague(leagues.find((x) => x.leagueId === +leagueId));
+    selectLeague({ ...leagues.find((x) => x.leagueId === +leagueId) });
   };
 
   const selectHomeTeamHandler = (homeTeamId) => {
-    selectHomeTeam(premierLeagueTeams.find((x) => x.id === +homeTeamId));
+    selectHomeTeam({ ...premierLeagueTeams.find((x) => x.id === +homeTeamId) });
   };
 
   const selectAwayTeamHandler = (awayTeamId) => {
-    selectAwayTeam(premierLeagueTeams.find((x) => x.id === +awayTeamId));
+    selectAwayTeam({ ...premierLeagueTeams.find((x) => x.id === +awayTeamId) });
   };
 
   const isEmpty = (obj) => {

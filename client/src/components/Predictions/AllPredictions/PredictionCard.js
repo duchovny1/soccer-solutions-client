@@ -7,7 +7,6 @@ import styled from "styled-components";
 const PredictionCard = ({ prediction, history }) => {
   const { isAuthenticated } = useContext(AuthContext);
   useEffect(() => {
-    debugger;
     if (!isAuthenticated) {
       history.push("/login");
     }

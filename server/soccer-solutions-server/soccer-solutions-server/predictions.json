@@ -1,0 +1,57 @@
+﻿[
+  {
+    "id": 1,
+    "userName": "pesho123",
+    "Title": "Manchester City - Manchester United",
+    "Content": "After a stuttering start to the season, Pep Guardiola’s men have been absolutely ruthless over the past couple of months, winning an astonishing 21 straight games across all competitions, including 15 in the Premier League. The Citizens have raced 14 points clear of United at the top of the table and a win here will only serve to rub salt in the wound of their title challengers.",
+    "Prediction": "Home Team Win",
+    "HomeTeam": "Manchester City",
+    "AwayTeam": "Manchester United",
+    "HomeTeamLogo": "https://1000logos.net/wp-content/uploads/2017/05/emblem-Manchester-City.jpg",
+    "AwayTeamLogo": "https://i.pinimg.com/originals/ca/0a/2f/ca0a2ffc11aca0ed1f903d43cccd7b26.jpg",
+  },
+  {
+    "id": 1,
+    "userName": "ivan423",
+    "Title": "Chelsea - Totthenham Spurs",
+    "Content": "After a stuttering start to the season, Pep Guardiola’s men have been absolutely ruthless over the past couple of months, winning an astonishing 21 straight games across all competitions, including 15 in the Premier League. The Citizens have raced 14 points clear of United at the top of the table and a win here will only serve to rub salt in the wound of their title challengers.",
+    "Prediction": "Over 2.5",
+    "HomeTeam": "Chelsea",
+    "AwayTeam": "Totthenham Spurs",
+    "HomeTeamLogo": "https://1000logos.net/wp-content/uploads/2017/05/emblem-Manchester-City.jpg",
+    "AwayTeamLogo": "https://i.pinimg.com/originals/ca/0a/2f/ca0a2ffc11aca0ed1f903d43cccd7b26.jpg"
+  },
+  {
+    "id": 1,
+    "userName": "migel8",
+    "Title": "Real Madrid - Sevilla",
+    "Content": "After a stuttering start to the season, Pep Guardiola’s men have been absolutely ruthless over the past couple of months, winning an astonishing 21 straight games across all competitions, including 15 in the Premier League. The Citizens have raced 14 points clear of United at the top of the table and a win here will only serve to rub salt in the wound of their title challengers.",
+    "Prediction": "Home Team Win",
+    "HomeTeam": "Real Madrid",
+    "AwayTeam": "Sevilla",
+    "HomeTeamLogo": "https://1000logos.net/wp-content/uploads/2017/05/emblem-Manchester-City.jpg",
+    "AwayTeamLogo": "https://i.pinimg.com/originals/ca/0a/2f/ca0a2ffc11aca0ed1f903d43cccd7b26.jpg"
+  },
+  {
+    "id": 1,
+    "userName": "jozef213",
+    "Title": "Getafe - Osasuna",
+    "Content": "After a stuttering start to the season, Pep Guardiola’s men have been absolutely ruthless over the past couple of months, winning an astonishing 21 straight games across all competitions, including 15 in the Premier League. The Citizens have raced 14 points clear of United at the top of the table and a win here will only serve to rub salt in the wound of their title challengers.",
+    "Prediction": "Draw",
+    "HomeTeam": "Getafe",
+    "AwayTeam": "Osasuna",
+    "HomeTeamLogo": "https://1000logos.net/wp-content/uploads/2017/05/emblem-Manchester-City.jpg",
+    "AwayTeamLogo": "https://i.pinimg.com/originals/ca/0a/2f/ca0a2ffc11aca0ed1f903d43cccd7b26.jpg"
+  },
+  {
+    "id": 1,
+    "userName": "pesho123",
+    "Title": "Brighton Albion - Reading",
+    "Content": "After a stuttering start to the season, Pep Guardiola’s men have been absolutely ruthless over the past couple of months, winning an astonishing 21 straight games across all competitions, including 15 in the Premier League. The Citizens have raced 14 points clear of United at the top of the table and a win here will only serve to rub salt in the wound of their title challengers.",
+    "Prediction": "Over 2.5",
+    "HomeTeam": "Brighton Alb",
+    "AwayTeam": "Reading",
+    "HomeTeamLogo": "https://1000logos.net/wp-content/uploads/2017/05/emblem-Manchester-City.jpg",
+    "AwayTeamLogo": "https://i.pinimg.com/originals/ca/0a/2f/ca0a2ffc11aca0ed1f903d43cccd7b26.jpg"
+  }
+]

@@ -1,0 +1,251 @@
+﻿[
+  {
+    "leagueName": "Premier League",
+    "countryName": "England",
+    "games": [
+      {
+        "homeTeamName": "Liverpool",
+        "awayTeamName": "Manchester City",
+        "kickOff": "22:00",
+        "status": "NotStarted",
+        "result": "0:0"
+      },
+      {
+        "homeTeamName": "West Ham",
+        "awayTeamName": "Arsenal",
+        "kickOff": "22:00",
+        "status": "NotStarted",
+        "result": "0:0"
+      },
+      {
+        "homeTeamName": "Chelsea",
+        "awayTeamName": "Brighton Albion",
+        "kickOff": "22:00",
+        "status": "NotStarted",
+        "result": "0:0"
+      }
+    ]
+  },
+  {
+    "leagueName": "Championship",
+    "countryName": "England",
+    "games": [
+      {
+        "homeTeamName": "Reading",
+        "awayTeamName": "Hull City",
+        "kickOff": "22:00",
+        "status": "NotStarted",
+        "result": "0:0"
+      },
+      {
+        "homeTeamName": "Cardiff",
+        "awayTeamName": "Middlesbro",
+        "kickOff": "22:00",
+        "status": "NotStarted",
+        "result": "0:0"
+      },
+      {
+        "homeTeamName": "Portsmouth",
+        "awayTeamName": "Burnley",
+        "kickOff": "22:00",
+        "status": "NotStarted",
+        "result": "0:0"
+      }
+    ]
+  },
+  {
+    "leagueName": "Bundesliga",
+    "countryName": "Germany",
+    "games": [
+      {
+        "homeTeamName": "Bayern Munchen",
+        "awayTeamName": "Borussia Dortmund",
+        "kickOff": "19:30",
+        "status": "NotStarted",
+        "result": "0:0"
+      }
+    ]
+  },
+  {
+    "leagueName": "La Liga",
+    "countryName": "Spain",
+    "games": [
+      {
+        "homeTeamName": "Barcelona",
+        "awayTeamName": "Sevilla ",
+        "kickOff": "19:30",
+        "status": "NotStarted",
+        "result": "0:0"
+      },
+      {
+        "homeTeamName": "Real Madrid",
+        "awayTeamName": "Atletico Bilbao ",
+        "kickOff": "19:30",
+        "status": "NotStarted",
+        "result": "0:0"
+      },
+      {
+        "homeTeamName": "Atletico Madrid",
+        "awayTeamName": "Getafe",
+        "kickOff": "19:30",
+        "status": "NotStarted",
+        "result": "0:0"
+      }
+    ]
+  },
+  {
+    "leagueName": "Segunda",
+    "countryName": "Spain",
+    "games": [
+      {
+        "homeTeamName": "Mayorka",
+        "awayTeamName": "Almeria ",
+        "kickOff": "19:30",
+        "status": "NotStarted",
+        "result": "0:0"
+      },
+      {
+        "homeTeamName": "Cadiz",
+        "awayTeamName": "Espanyol",
+        "kickOff": "19:30",
+        "status": "NotStarted",
+        "result": "0:0"
+      }
+    ]
+  },
+  {
+    "leagueName": "First Devision A",
+    "countryName": "Belgium ",
+    "games": [
+      {
+        "homeTeamName": "Anderlecht",
+        "awayTeamName": "Club Brugge ",
+        "kickOff": "19:30",
+        "status": "NotStarted",
+        "result": "0:0"
+      },
+      {
+        "homeTeamName": "Atwerp",
+        "awayTeamName": "Genk",
+        "kickOff": "19:30",
+        "status": "NotStarted",
+        "result": "0:0"
+      },
+      {
+        "homeTeamName": "Standart Liege",
+        "awayTeamName": "GENT",
+        "kickOff": "19:30",
+        "status": "NotStarted",
+        "result": "0:0"
+      }
+    ]
+  },
+  {
+    "leagueName": "Devision B",
+    "countryName": "Belgium ",
+    "games": [
+      {
+        "homeTeamName": "Anderlecht",
+        "awayTeamName": "Club Brugge ",
+        "kickOff": "19:30",
+        "status": "NotStarted",
+        "result": "0:0"
+      },
+      {
+        "homeTeamName": "Atwerp",
+        "awayTeamName": "Genk",
+        "kickOff": "19:30",
+        "status": "NotStarted",
+        "result": "0:0"
+      },
+      {
+        "homeTeamName": "Standart Liege",
+        "awayTeamName": "GENT",
+        "kickOff": "19:30",
+        "status": "NotStarted",
+        "result": "0:0"
+      }
+    ]
+  },
+  {
+    "leagueName": "Primeira Liga",
+    "countryName": "Portugal",
+    "games": [
+      {
+        "homeTeamName": "Anderlecht",
+        "awayTeamName": "Club Brugge ",
+        "kickOff": "19:30",
+        "status": "NotStarted",
+        "result": "0:0"
+      },
+      {
+        "homeTeamName": "Atwerp",
+        "awayTeamName": "Genk",
+        "kickOff": "19:30",
+        "status": "NotStarted",
+        "result": "0:0"
+      },
+      {
+        "homeTeamName": "Standart Liege",
+        "awayTeamName": "GENT",
+        "kickOff": "19:30",
+        "status": "NotStarted",
+        "result": "0:0"
+      }
+    ]
+  },
+  {
+    "leagueName": "League One",
+    "countryName": "Еngland",
+    "games": [
+      {
+        "homeTeamName": "Anderlecht",
+        "awayTeamName": "Club Brugge ",
+        "kickOff": "19:30",
+        "status": "NotStarted",
+        "result": "0:0"
+      },
+      {
+        "homeTeamName": "Atwerp",
+        "awayTeamName": "Genk",
+        "kickOff": "19:30",
+        "status": "NotStarted",
+        "result": "0:0"
+      },
+      {
+        "homeTeamName": "Standart Liege",
+        "awayTeamName": "GENT",
+        "kickOff": "19:30",
+        "status": "NotStarted",
+        "result": "0:0"
+      }
+    ]
+  },
+  {
+    "leagueName": "England",
+    "countryName": "England",
+    "games": [
+      {
+        "homeTeamName": "Anderlecht",
+        "awayTeamName": "Club Brugge ",
+        "kickOff": "19:30",
+        "status": "NotStarted",
+        "result": "0:0"
+      },
+      {
+        "homeTeamName": "Atwerp",
+        "awayTeamName": "Genk",
+        "kickOff": "19:30",
+        "status": "NotStarted",
+        "result": "0:0"
+      },
+      {
+        "homeTeamName": "Standart Liege",
+        "awayTeamName": "GENT",
+        "kickOff": "19:30",
+        "status": "NotStarted",
+        "result": "0:0"
+      }
+    ]
+  }
+]

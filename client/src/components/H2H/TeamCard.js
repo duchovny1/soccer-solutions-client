@@ -4,8 +4,6 @@ import styled from "styled-components";
 import { Container } from "react-bootstrap";
 
 const TeamCard = ({ teamId }) => {
-  console.log(teamId);
-  console.log("team-card");
   const StyledImg = styled.img`
     width: 300px;
     height: 300px;

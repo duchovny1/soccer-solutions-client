@@ -52,7 +52,7 @@ const Header = ({ match }) => {
           >
             PREDICTIONS
           </Nav.Link>
-          <section style={{ marginLeft: "880px" }}>
+          <section style={{ marginLeft: "650px" }}>
             {isAuthenticated ? (
               <div
                 style={{

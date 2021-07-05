@@ -21,8 +21,6 @@ function App() {
 
   useEffect(() => {
     auth.onAuthStateChanged(setUser);
-    console.log(user);
-    debugger;
   }, []);
 
   const authInfo = {
@@ -51,7 +49,7 @@ function App() {
               exact
               component={Head2Head}
             />
-            <Route path="/predictions" exact component={isAuth(Predictions)} />
+            <Route path="/predictions" exact component={Predictions} />
             <Route
               path="/predictions/create"
               exact

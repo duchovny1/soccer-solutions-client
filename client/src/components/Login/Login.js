@@ -9,7 +9,6 @@ const Login = ({ history }) => {
   const { isAuthenticated, username } = useContext(AuthContext);
 
   useEffect(() => {
-    debugger;
     if (isAuthenticated) {
       history.push("/fixtures");
     }

@@ -1,0 +1,32 @@
+﻿[
+  {
+    "id": 1,
+    "code":  "GB",
+    "countryName": "England"
+  },
+  {
+    "id": 2,
+    "code":  "FR",
+    "countryName": "France"
+  },
+  {
+    "id": 3,
+    "code":  "SP",
+    "countryName": "Spain"
+  },
+  {
+    "id": 4,
+    "code":  "BL",
+    "countryName": "Belgium"
+  },
+  {
+    "id": 5,
+    "code":  "IT",
+    "countryName": "Italy"
+  },
+  {
+    "id": 6,
+    "code": "SC",
+    "countryName": "Scotland"
+  }
+]
